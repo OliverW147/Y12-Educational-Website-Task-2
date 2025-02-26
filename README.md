@@ -1,5 +1,7 @@
 ![1](https://github.com/OliverW147/Y12-Educational-Website-Task-2/blob/main/image.png?raw=true)
 
+Designer's Statement:
+
 My project aimed to address a problem in online learning. As topics become more complex in later years of school, many educational websites become less interactive and rely on static formats to teach content. While such formats can still prove to be valuable, they require high levels of initiative and motivation from the learner. My project innovatively addresses this issue by incorporating interactive elements into online physics and maths resources to engage users, provide feedback, and track progress.
 One main innovation of this project is the use of different forms of interactive elements as opposed to relying on one repetitive format. In addition to resources, the website contains quizzes and an accounts system to facilitate progress tracking and feedback.
 The website is object-oriented and developed using the Flask framework in Python. It is structured around the User Class, which encapsulates progress and is associated with quizzes and resources. SQL Alchemy is effectively utilised as an Object Relational Mapper (ORM) to map these classes to database tables. This approach allows objects to persist beyond the website’s runtime. It also supports future updates outside of the current scope.
