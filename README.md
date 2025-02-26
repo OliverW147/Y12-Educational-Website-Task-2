@@ -1,4 +1,4 @@
-# Interactive Learning Platform (Year 12 Project)
+# Interactive Learning Platform (Year 12)
 
 ![1](https://github.com/OliverW147/Y12-Educational-Website-Task-2/blob/main/image.png?raw=true)
 
