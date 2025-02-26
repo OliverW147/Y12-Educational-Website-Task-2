@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 mb-4">
+            <div class="card card-custom shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Maths - Algebra</h5>
+                    <p class="card-text">Learn the fundamentals of algebra including variables and equations.</p>
+                    <div class="container text-center mt-5">
+    <div class="row">
+        <div class="col-12">
+            <p>&nbsp;</p> </div>
+    </div>
+                    <a href="{{ url_for('algebra') }}" class="btn btn-primary">View Resource</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card card-custom shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Physics - Newton's Laws</h5>
+                    <p class="card-text">Explore Newton's Three Laws of Motion.</p>
+                    <div class="container text-center mt-5">
+    <div class="row">
+        <div class="col-12">
+            <p>&nbsp;</p> </div>
+    </div>
+                    <a href="{{ url_for('newton') }}" class="btn btn-primary">View Resource</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card card-custom shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Maths - Simultaneous Equations</h5>
+                    <p class="card-text">Learn how to solve simultaneous equations through various methods.</p>
+                    <div class="container text-center mt-5">
+    <div class="row">
+        <div class="col-12">
+            <p>&nbsp;</p> </div>
+    </div>
+                    <a href="{{ url_for('simultaneous') }}" class="btn btn-primary">View Resource</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row mt-4">
+    <div class="col-md-6">
+        <div class="card card-custom">
+            <div class="card-body">
+                <h4>Resources</h4>
+                <p>Explore learning materials.</p>
+                <a href="{{ url_for('resources') }}" class="btn btn-secondary">View Resources</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card card-custom">
+            <div class="card-body">
+                <h4>Quizzes</h4>
+                <p>Test your knowledge.</p>
+                <a href="{{ url_for('quiz') }}" class="btn btn-secondary">View All Quiz Results</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-md-12">
+        <div class="card card-custom">
+            <div class="card-body">
+                <h4>Your Progress</h4>
+                <p>See how you're doing across topics.</p>
+                <a href="{{ url_for('progress', user_id=session.get('user_id')) }}" class="btn btn-secondary">View Progress</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

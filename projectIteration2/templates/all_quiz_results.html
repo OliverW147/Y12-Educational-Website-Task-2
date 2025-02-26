@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block title %}All Quiz Results{% endblock %}
+
+{% block content %}
+<div class="container py-4">
+    <h2 class="text-center mb-4">All Quiz Results</h2>
+
+    {% if quizzes %}
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Quiz Title</th>
+                    <th>Topic</th>
+                    <th>Score</th>
+                    <th>Date Taken</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for quiz in quizzes %}
+                <tr>
+                    <td>{{ quiz.title }}</td>
+                    <td>{{ quiz.topic }}</td>
+                    <td>{{ quiz.quiz_score }}%</td>
+                    <td>{{ quiz.date_taken.strftime('%Y-%m-%d') }}</td>
+                    <td>
+                        <a href="{{ url_for('quiz_results', quiz_id=quiz.quiz_id) }}" class="btn btn-secondary btn-sm">View Details</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p class="text-center mt-5 mb-5">No quiz results available. Start taking quizzes to see your results!</p>
+    {% endif %}
+</div>
+
+<div class="container text-center mt-5">
+    <div class="row">
+        <div class="col-12">
+            <p>&nbsp;</p> </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <a href="{{ url_for('dashboard') }}" class="btn btn-primary" style="margin-top: 50px !important;">Back to Dashboard</a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

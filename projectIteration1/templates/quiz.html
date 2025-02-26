@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+</head>
+<body>
+    <h1>Quiz: {{ quiz.topic }}</h1>
+    <form method="POST">
+        {% for question in quiz.questions %}
+            <p>{{ question.question_text }}</p>
+            <!-- TODO: Add different types of input fields based on question type -->
+            <input type="text" name="answers">
+        {% endfor %}
+        <button type="submit">Submit Quiz</button>
+    </form>
+    <a href="{{ url_for('dashboard') }}">Back to Dashboard</a>
+</body>
+</html>

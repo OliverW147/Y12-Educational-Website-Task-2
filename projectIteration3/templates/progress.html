@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}Progress{% endblock %}
+
+{% block content %}
+<div class="container py-4">
+    <h2 class="text-center mb-4">Your Progress</h2>
+
+    {% if progress %}
+        <table class="table table-striped" border="1">
+            <thead>
+                <tr>
+                    <th>Topic</th>
+                    <th>Best Quiz Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in progress %}
+                <tr>
+                    <td>{{ item.topic }}</td>
+                    <td>{{ item.best_score }}%</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p class="text-center mt-5 mb-5">No progress data available. Start taking quizzes to track your progress!</p>
+    {% endif %}
+</div>
+
+<div class="container text-center mt-5">
+    <div class="row">
+        <div class="col-12">
+            <p>&nbsp;</p> </div>
+            <a href="{{ url_for('dashboard') }}" class="btn btn-primary" style="margin-top: 50px !important;">Back to Dashboard</a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

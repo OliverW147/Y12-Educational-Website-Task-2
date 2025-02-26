@@ -1,0 +1,154 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <h2>Physics - Newton's Laws</h2>
+    <p>Newton's Laws of Motion describe the relationship between a body and the forces acting on it, and the body's motion in response to those forces. They form the basis of classical mechanics.</p>
+
+    <h3>Key Concepts of Newton's Laws</h3>
+    <p>Below are some foundational concepts in Newton's Laws of Motion, with explanations, examples, and interactive questions:</p>
+
+    <h4>1. Newton's First Law (Law of Inertia)</h4>
+    <div class="concept-section">
+        <p>An object at rest stays at rest, and an object in motion stays in motion with the same speed and in the same direction unless acted upon by an unbalanced force.</p>
+        <div class="example">
+            <p><strong>Example:</strong></p>
+            <p>If you slide a hockey puck on ice, it will eventually stop because of friction acting as an unbalanced force.</p>
+        </div>
+        <div class="question">
+            <p><strong>Question:</strong> What is the primary concept described by Newton's First Law?</p>
+            <ul>
+                <li><input type="radio" name="q1" value="A"> A. Objects resist changes in their motion unless acted upon by an unbalanced force.</li>
+                <li><input type="radio" name="q1" value="B"> B. Force equals mass times acceleration.</li>
+                <li><input type="radio" name="q1" value="C"> C. Every action has an equal and opposite reaction.</li>
+            </ul>
+            <button onclick="checkAnswer('A', 'q1', 'result1')">Check Answer</button>
+            <button class="hint-button" onclick="toggleHint('hint1')">Hint</button>
+            <div id="hint1" class="hint" style="display:none;">Think about how objects behave when forces are balanced.</div>
+            <div id="result1" class="result"></div>
+        </div>
+    </div>
+
+    <h4>2. Newton's Second Law (F=ma)</h4>
+    <div class="concept-section">
+        <p>This law states that the acceleration of an object is directly proportional to the net force acting on it and inversely proportional to its mass.</p>
+        <div class="example">
+            <p><strong>Example:</strong> If you push two carts with the same force but one cart is heavier, the lighter cart accelerates more.</p>
+        </div>
+        <div class="question">
+            <p><strong>Question:</strong> Which equation represents Newton's Second Law?</p>
+            <ul>
+                <li><input type="radio" name="q2" value="A"> A. F = mv</li>
+                <li><input type="radio" name="q2" value="B"> B. F = ma</li>
+                <li><input type="radio" name="q2" value="C"> C. F = m/a</li>
+            </ul>
+            <button onclick="checkAnswer('B', 'q2', 'result2')">Check Answer</button>
+            <button class="hint-button" onclick="toggleHint('hint2')">Hint</button>
+            <div id="hint2" class="hint" style="display:none;">Remember that force is the product of mass and acceleration.</div>
+            <div id="result2" class="result"></div>
+        </div>
+    </div>
+
+    <h4>3. Newton's Third Law (Action and Reaction)</h4>
+    <div class="concept-section">
+        <p>Newton's Third Law states that for every action, there is an equal and opposite reaction.</p>
+        <div class="example">
+            <p><strong>Example:</strong> When you jump off a boat, you push the boat backwards as you move forward.</p>
+        </div>
+        <div class="question">
+            <p><strong>Question:</strong> What happens when you push against a wall?</p>
+            <ul>
+                <li><input type="radio" name="q3" value="A"> A. The wall moves forward.</li>
+                <li><input type="radio" name="q3" value="B"> B. You move backward.</li>
+                <li><input type="radio" name="q3" value="C"> C. Both you and the wall move sideways.</li>
+            </ul>
+            <button onclick="checkAnswer('B', 'q3', 'result3')">Check Answer</button>
+            <button class="hint-button" onclick="toggleHint('hint3')">Hint</button>
+            <div id="hint3" class="hint" style="display:none;">Think about the equal and opposite reaction concept.</div>
+            <div id="result3" class="result"></div>
+        </div>
+    </div>
+
+    <h4>4. Applications of Newton's Laws</h4>
+    <div class="concept-section">
+        <p>Newton's Laws have various applications in daily life, from driving a car to playing sports.</p>
+        <div class="example">
+            <p><strong>Example:</strong> In car crashes, passengers continue moving at the car's previous speed due to inertia (First Law).</p>
+        </div>
+        <div class="question">
+            <p><strong>Question:</strong> Which law explains why seatbelts are important in vehicles?</p>
+            <ul>
+                <li><input type="radio" name="q4" value="A"> A. Newton's First Law</li>
+                <li><input type="radio" name="q4" value="B"> B. Newton's Second Law</li>
+                <li><input type="radio" name="q4" value="C"> C. Newton's Third Law</li>
+            </ul>
+            <button onclick="checkAnswer('A', 'q4', 'result4')">Check Answer</button>
+            <button class="hint-button" onclick="toggleHint('hint4')">Hint</button>
+            <div id="hint4" class="hint" style="display:none;">Seatbelts counteract inertia.</div>
+            <div id="result4" class="result"></div>
+        </div>
+    </div>
+
+    <h3>Practice Problems</h3>
+    <p>Try solving these additional problems to test your understanding:</p>
+    <ul class="practice-list">
+        <li>A 10 kg object is pushed with a force of 50 N. What is its acceleration? <button onclick="showSolution('5 m/s²')">Show Solution</button></li>
+        <li>Identify the action-reaction force pair when a rocket launches. <button onclick="showSolution('Rocket pushes exhaust down, exhaust pushes rocket up.')">Show Solution</button></li>
+        <li>Why does a car stop when you press the brakes? <button onclick="showSolution('Brakes create an unbalanced force that slows the car.')">Show Solution</button></li>
+    </ul>
+</div>
+
+<script>
+    function checkAnswer(correctAnswer, inputName, resultId) {
+        const userAnswer = document.querySelector(`input[name="${inputName}"]:checked`);
+        const resultElement = document.getElementById(resultId);
+        if (userAnswer && userAnswer.value === correctAnswer) {
+            resultElement.innerHTML = "<span class='correct'>Correct!</span>";
+            resultElement.classList.add('success');
+            resultElement.classList.remove('error');
+        } else {
+            resultElement.innerHTML = "<span class='incorrect'>Incorrect. Try again!</span>";
+            resultElement.classList.add('error');
+            resultElement.classList.remove('success');
+        }
+    }
+
+    function toggleHint(hintId) {
+        const hint = document.getElementById(hintId);
+        if (hint.style.display === 'none') {
+            hint.style.display = 'block';
+        } else {
+            hint.style.display = 'none';
+        }
+    }
+
+    function showSolution(solution) {
+        alert(`Solution: ${solution}`);
+    }
+</script>
+
+<style>
+    .question {
+        margin-top: 10px;
+    }
+
+    .result {
+        margin-top: 5px;
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+    .correct {
+        color: limegreen;
+        font-weight: bold;
+    }
+
+    .incorrect {
+        color: red;
+        font-weight: bold;
+    }
+
+    .practice-list li {
+        margin: 8px 0;
+    }
+</style>
+{% endblock %}

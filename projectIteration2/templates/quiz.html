@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Available Quizzes</h2>
+<ul>
+    <li><a href="{{ url_for('algebra_quiz') }}">Algebra Quiz</a></li>
+    <li><a href="{{ url_for('newtons_laws_quiz') }}">Newton's Laws Quiz</a></li>
+    <li><a href="{{ url_for('simultaneous_equations_quiz') }}">Simultaneous Equations Quiz</a></li>
+</ul>
+{% endblock %}

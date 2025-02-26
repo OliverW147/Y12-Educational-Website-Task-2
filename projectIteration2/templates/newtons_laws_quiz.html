@@ -1,0 +1,191 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Newton's Laws Quiz</h2>
+<p>Test your understanding of Newton's Laws of Motion with this quiz. Answer the questions below and submit to see your score.</p>
+
+<form id="newtonsLawsQuizForm">
+    <!-- Question 1 -->
+    <h4>1. What does Newton's First Law state?</h4>
+    <div class="form-check">
+        <input type="radio" id="q1a" name="q1" value="An object at rest will stay at rest." class="form-check-input">
+        <label for="q1a" class="form-check-label">An object at rest will stay at rest.</label>
+    </div>
+    <div class="form-check">
+        <input type="radio" id="q1b" name="q1" value="Force equals mass times acceleration." class="form-check-input">
+        <label for="q1b" class="form-check-label">Force equals mass times acceleration.</label>
+    </div>
+    <div class="form-check">
+        <input type="radio" id="q1c" name="q1" value="For every action, there is an equal and opposite reaction." class="form-check-input">
+        <label for="q1c" class="form-check-label">For every action, there is an equal and opposite reaction.</label>
+    </div>
+
+    <!-- Question 2 -->
+    <h4>2. What is the formula for calculating force?</h4>
+    <input type="text" id="q2" placeholder="Enter your answer" class="form-control mb-3">
+
+    <!-- Question 3 -->
+    <h4>3. True or False: Newton's Second Law is often summarized by the equation F=ma.</h4>
+    <div class="form-check">
+        <input type="radio" id="q3a" name="q3" value="True" class="form-check-input">
+        <label for="q3a" class="form-check-label">True</label>
+    </div>
+    <div class="form-check">
+        <input type="radio" id="q3b" name="q3" value="False" class="form-check-input">
+        <label for="q3b" class="form-check-label">False</label>
+    </div>
+
+    <!-- Question 4 -->
+    <h4>4. Which of the following is an example of Newton's Third Law?</h4>
+    <div class="form-check">
+        <input type="radio" id="q4a" name="q4" value="A car accelerating on a flat road." class="form-check-input">
+        <label for="q4a" class="form-check-label">A car accelerating on a flat road.</label>
+    </div>
+    <div class="form-check">
+        <input type="radio" id="q4b" name="q4" value="A rocket launching into space." class="form-check-input">
+        <label for="q4b" class="form-check-label">A rocket launching into space.</label>
+    </div>
+    <div class="form-check">
+        <input type="radio" id="q4c" name="q4" value="Pushing against a wall." class="form-check-input">
+        <label for="q4c" class="form-check-label">Pushing against a wall.</label>
+    </div>
+
+    <!-- Question 5 -->
+<h4>5. What can we say about the forces acting on a car traveling at a constant speed on a straight road?</h4>
+<div class="form-check">
+    <input type="radio" id="q5a" name="q5" value="The forces are balanced." class="form-check-input">
+    <label for="q5a" class="form-check-label">The forces are balanced.</label>
+</div>
+<div class="form-check">
+    <input type="radio" id="q5b" name="q5" value="There is a net force acting in the direction of motion." class="form-check-input">
+    <label for="q5b" class="form-check-label">There is a net force acting in the direction of motion.</label>
+</div>
+<div class="form-check">
+    <input type="radio" id="q5c" name="q5" value="The forces are unbalanced." class="form-check-input">
+    <label for="q5c" class="form-check-label">The forces are unbalanced.</label>
+</div>
+
+
+    <!-- Question 6 -->
+    <h4>6. True or False: An object will not change its state of motion unless acted upon by an unbalanced force.</h4>
+    <div class="form-check">
+        <input type="radio" id="q6a" name="q6" value="True" class="form-check-input">
+        <label for="q6a" class="form-check-label">True</label>
+    </div>
+    <div class="form-check">
+        <input type="radio" id="q6b" name="q6" value="False" class="form-check-input">
+        <label for="q6b" class="form-check-label">False</label>
+    </div>
+
+    <!-- Question 7 -->
+    <h4>7. What does an object’s inertia depend on?</h4>
+    <div class="form-check">
+        <input type="radio" id="q7a" name="q7" value="Its mass." class="form-check-input">
+        <label for="q7a" class="form-check-label">Its mass.</label>
+    </div>
+    <div class="form-check">
+        <input type="radio" id="q7b" name="q7" value="Its velocity." class="form-check-input">
+        <label for="q7b" class="form-check-label">Its velocity.</label>
+    </div>
+    <div class="form-check">
+        <input type="radio" id="q7c" name="q7" value="Its shape." class="form-check-input">
+        <label for="q7c" class="form-check-label">Its shape.</label>
+    </div>
+
+    <!-- Question 8 -->
+    <h4>8. What is the acceleration of an object if a force of 10 N is applied to a mass of 2 kg?</h4>
+    <input type="text" id="q8" placeholder="Enter your answer" class="form-control mb-3">
+
+    <!-- Question 9 -->
+    <h4>9. True or False: Mass and weight are the same thing.</h4>
+    <div class="form-check">
+        <input type="radio" id="q9a" name="q9" value="True" class="form-check-input">
+        <label for="q9a" class="form-check-label">True</label>
+    </div>
+    <div class="form-check">
+        <input type="radio" id="q9b" name="q9" value="False" class="form-check-input">
+        <label for="q9b" class="form-check-label">False</label>
+    </div>
+
+    <!-- Question 10 -->
+    <h4>10. What happens to an object in motion when no forces are acting on it?</h4>
+    <div class="form-check">
+        <input type="radio" id="q10a" name="q10" value="It will eventually stop." class="form-check-input">
+        <label for="q10a" class="form-check-label">It will eventually stop.</label>
+    </div>
+    <div class="form-check">
+        <input type="radio" id="q10b" name="q10" value="It will keep moving at a constant speed." class="form-check-input">
+        <label for="q10b" class="form-check-label">It will keep moving at a constant speed.</label>
+    </div>
+    <div class="form-check">
+        <input type="radio" id="q10c" name="q10" value="It will accelerate." class="form-check-input">
+        <label for="q10c" class="form-check-label">It will accelerate.</label>
+    </div>
+
+    <!-- Submit Button -->
+    <button type="button" class="btn btn-primary mt-3" onclick="submitNewtonsLawsQuiz()">Submit Quiz</button>
+</form>
+
+<div id="quizResults" style="display:none;">
+    <h3>Quiz Results</h3>
+    <p id="scoreDisplay"></p>
+    <a href="{{ url_for('dashboard') }}" class="btn btn-secondary">Back to Dashboard</a>
+</div>
+
+<script>
+function submitNewtonsLawsQuiz() {
+    // Retrieve user answers
+    const q1 = document.querySelector('input[name="q1"]:checked')?.value || null;
+    const q2 = document.getElementById('q2').value.toLowerCase() || null;
+    const q3 = document.querySelector('input[name="q3"]:checked')?.value || null;
+    const q4 = document.querySelector('input[name="q4"]:checked')?.value || null;
+    const q5 = document.querySelector('input[name="q5"]:checked')?.value || null;
+    const q6 = document.querySelector('input[name="q6"]:checked')?.value || null;
+    const q7 = document.querySelector('input[name="q7"]:checked')?.value || null;
+    const q8 = document.getElementById('q8').value || null; // Expected answer for F=ma
+    const q9 = document.querySelector('input[name="q9"]:checked')?.value || null;
+    const q10 = document.querySelector('input[name="q10"]:checked')?.value || null;
+
+    // Correct answers
+    const correctAnswers = {
+        q1: 'An object at rest will stay at rest.',
+        q2: 'f=ma',
+        q3: 'True',
+        q4: 'A rocket launching into space.',
+        q5: 'The forces are balanced.',
+        q6: 'True',
+        q7: 'Its mass.',
+        q8: '5',
+        q9: 'False',
+        q10: 'It will keep moving at a constant speed.'
+    };
+
+    // Calculate score
+    let score = 0;
+    if (q1 === correctAnswers.q1) score++;
+    if (q2 === correctAnswers.q2) score++;
+    if (q3 === correctAnswers.q3) score++;
+    if (q4 === correctAnswers.q4) score++;
+    if (q5 === correctAnswers.q5) score++;
+    if (q6 === correctAnswers.q6) score++;
+    if (q7 === correctAnswers.q7) score++;
+    if (q8 === correctAnswers.q8) score++;
+    if (q9 === correctAnswers.q9) score++;
+    if (q10 === correctAnswers.q10) score++;
+
+    // Display results
+    document.getElementById('scoreDisplay').innerText = `Your score is ${score}/10.`;
+    document.getElementById('quizResults').style.display = 'block';
+
+    // Save score to server
+    fetch('{{ url_for("submit_newtons_laws_quiz") }}', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ score: score, quiz_id: 2 })
+    })
+    .then(response => response.json())
+    .then(data => console.log('Score saved:', data))
+    .catch(error => console.error('Error:', error));
+}
+
+</script>
+{% endblock %}

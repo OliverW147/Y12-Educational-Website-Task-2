@@ -1,0 +1,232 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* background gradient */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #007FFF, #002366);  /* gradient */
+    color: #fff;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    flex: 1;
+}
+
+.navbar {
+    background: linear-gradient(to right, #002366, #007FFF); /* Other gradient */
+    padding: 1rem 0;
+}
+
+.navbar-brand {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.nav li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.nav li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.hero-section {
+    background: linear-gradient(135deg, #007FFF, #002366); /* gradient */
+    color: #fff;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.hero-content a {
+    color: #fff;
+}
+
+.hero-content a:visited {
+    color: #fff;
+}
+
+.btn-primary {
+    background: linear-gradient(to right, #002366, #007FFF); /* Other gradient */
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(to right, #002366, #007FFF); /* Other gradient */
+}
+
+.btn-primary a {
+    color: #fff;
+}
+
+.btn-primary a:visited {
+    color: #fff;
+}
+
+/* Forms */
+form {
+    background: linear-gradient(to right, #002366, #007FFF); /* Other gradient */
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Link Styling */
+a {
+    color: #4A90E2;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #7B61FF
+    text-decoration: underline;
+}
+
+a:visited {
+    color: #4A90E2;
+}
+
+.navbar a {
+    color: #fff;
+}
+
+.navbar a:hover {
+    color: #E0E0E0;
+}
+
+.navbar a:visited {
+    color: #fff;
+}
+
+/* Link Styling */
+.btn-primary {
+    background: linear-gradient(to right, #002366, #007FFF);  /* gradient */
+    color: #fff;
+}
+
+.btn-primary a {
+    color: #fff;
+}
+
+.btn-primary a:visited {
+    color: #fff;
+}
+
+.btn-primary a:hover {
+    color: #fff;
+}
+
+/* Form Links */
+.form-link a {
+    color: #4A90E2;
+}
+
+.form-link a:hover {
+    color: #7B61FF;
+}
+
+.form-link a:visited {
+    color: #4A90E2;
+}
+
+/* Dashboard Links */
+.dashboard-content a {
+    color: #4A90E2;
+}
+
+.dashboard-content a:hover {
+    color: #7B61FF;
+}
+
+.dashboard-content a:visited {
+    color: #4A90E2;
+}
+
+
+
+/* Cards */
+.card-custom {
+    background: linear-gradient(to right, #002366, #007FFF); /* Other gradient */
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-custom a {
+    color: #5c8bf6;
+    text-decoration: none;
+}
+
+.card-custom a:hover {
+    color: #7B61FF;
+}
+
+.card-custom a:visited {
+    color: #4A90E2;
+}
+
+.progress-bar {
+    width: 100%;
+    background-color: #303030;
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+.progress-bar-inner {
+    width: 70%;
+    background: linear-gradient(135deg, #FF416C, #FF4B2B);
+    height: 20px;
+    border-radius: 25px;
+}
+
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+}

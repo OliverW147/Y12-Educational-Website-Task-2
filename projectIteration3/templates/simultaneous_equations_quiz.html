@@ -1,0 +1,171 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Simultaneous Equations Quiz</h2>
+<p>Test your understanding of simultaneous equations with this quiz. Answer the questions below and submit to see your score.</p>
+
+<form id="simultaneousEquationsQuizForm">
+    <!-- Question 1 -->
+    <h4>1. Solve the system of equations: 2x + 3y = 4, x - y = 2. What are the values of x and y?</h4>
+    <input type="text" id="q1" placeholder="Enter your answer as x,y (e.g., 2,1)" class="form-control mb-3">
+
+    <!-- Question 2 -->
+    <h4>2. Solve: 3x + 4y = 24, x - 2y = -2. What are the values of x and y?</h4>
+    <input type="text" id="q2" placeholder="Enter your answer as x,y (e.g., 2,1)" class="form-control mb-3">
+
+    <!-- Question 3 -->
+    <h4>3. What method can be used to solve simultaneous equations?</h4>
+    <div class="form-check">
+        <input type="radio" id="q3a" name="q3" value="Substitution" class="form-check-input">
+        <label for="q3a" class="form-check-label">Substitution</label>
+    </div>
+    <div class="form-check">
+        <input type="radio" id="q3b" name="q3" value="Elimination" class="form-check-input">
+        <label for="q3b" class="form-check-label">Elimination</label>
+    </div>
+    <div class="form-check">
+        <input type="radio" id="q3c" name="q3" value="Both" class="form-check-input">
+        <label for="q3c" class="form-check-label">Both</label>
+    </div>
+
+    <!-- Question 4 -->
+    <h4>4. True or False: The system of equations 2x + 4y = 8 and x + 2y = 4 is dependent.</h4>
+    <div class="form-check">
+        <input type="radio" id="q4a" name="q4" value="True" class="form-check-input">
+        <label for="q4a" class="form-check-label">True</label>
+    </div>
+    <div class="form-check">
+        <input type="radio" id="q4b" name="q4" value="False" class="form-check-input">
+        <label for="q4b" class="form-check-label">False</label>
+    </div>
+
+    <!-- Question 5 -->
+    <h4>5. What is the solution to the equations: 4x + 5y = 22, 2x - 3y = 0?</h4>
+    <input type="text" id="q5" placeholder="Enter your answer as x,y (e.g., 2,1)" class="form-control mb-3">
+
+    <!-- Question 6 -->
+    <h4>6. Solve for x and y: 5x + 2y = 19, x + y = 5.</h4>
+    <input type="text" id="q6" placeholder="Enter your answer as x,y (e.g., 2,1)" class="form-control mb-3">
+
+    <!-- Question 7 -->
+    <h4>7. True or False: The equations 3x + 2y = 5 and 3x + 2y = 7 have a unique solution.</h4>
+    <div class="form-check">
+        <input type="radio" id="q7a" name="q7" value="True" class="form-check-input">
+        <label for="q7a" class="form-check-label">True</label>
+    </div>
+    <div class="form-check">
+        <input type="radio" id="q7b" name="q7" value="False" class="form-check-input">
+        <label for="q7b" class="form-check-label">False</label>
+    </div>
+
+    <!-- Question 8 -->
+    <h4>8. Which of the following can represent the same equation?</h4>
+    <div class="form-check">
+        <input type="radio" id="q8a" name="q8" value="Multiplying by a constant" class="form-check-input">
+        <label for="q8a" class="form-check-label">Multiplying by a constant</label>
+    </div>
+    <div class="form-check">
+        <input type="radio" id="q8b" name="q8" value="Adding an equation" class="form-check-input">
+        <label for="q8b" class="form-check-label">Adding an equation</label>
+    </div>
+    <div class="form-check">
+        <input type="radio" id="q8c" name="q8" value="None" class="form-check-input">
+        <label for="q8c" class="form-check-label">None</label>
+    </div>
+
+    <!-- Question 9 -->
+    <h4>9. If the equations are inconsistent, what does it mean?</h4>
+    <div class="form-check">
+        <input type="radio" id="q9a" name="q9" value="There are no solutions." class="form-check-input">
+        <label for="q9a" class="form-check-label">There are no solutions.</label>
+    </div>
+    <div class="form-check">
+        <input type="radio" id="q9b" name="q9" value="There is one solution." class="form-check-input">
+        <label for="q9b" class="form-check-label">There is one solution.</label>
+    </div>
+    <div class="form-check">
+        <input type="radio" id="q9c" name="q9" value="There are infinite solutions." class="form-check-input">
+        <label for="q9c" class="form-check-label">There are infinite solutions.</label>
+    </div>
+
+    <!-- Question 10 -->
+    <h4>10. True or False: Any two linear equations in two variables will always have a solution.</h4>
+    <div class="form-check">
+        <input type="radio" id="q10a" name="q10" value="True" class="form-check-input">
+        <label for="q10a" class="form-check-label">True</label>
+    </div>
+    <div class="form-check">
+        <input type="radio" id="q10b" name="q10" value="False" class="form-check-input">
+        <label for="q10b" class="form-check-label">False</label>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-3">Submit</button>
+</form>
+
+<script>
+document.getElementById('simultaneousEquationsQuizForm').addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    // Collect answers from the form
+    const answers = {
+        q1: document.getElementById('q1').value.trim(),
+        q2: document.getElementById('q2').value.trim(),
+        q3: document.querySelector('input[name="q3"]:checked')?.value || '',
+        q4: document.querySelector('input[name="q4"]:checked')?.value || '',
+        q5: document.getElementById('q5').value.trim(),
+        q6: document.getElementById('q6').value.trim(),
+        q7: document.querySelector('input[name="q7"]:checked')?.value || '',
+        q8: document.querySelector('input[name="q8"]:checked')?.value || '',
+        q9: document.querySelector('input[name="q9"]:checked')?.value || '',
+        q10: document.querySelector('input[name="q10"]:checked')?.value || ''
+    };
+
+    try {
+        // Submit the quiz results to the backend
+        const response = await fetch('/submit_simultaneous_equations_quiz', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                score: calculateScore(answers),
+                quiz_id: 'SE1' // Adjust this to your specific quiz identification logic
+            })
+        });
+
+        const result = await response.json();
+        alert(result.message);
+        if (result.status === 'success') {
+            window.location.href = '/user-dashboard'; // Redirect after successful submission
+        }
+    } catch (error) {
+        console.error('Error submitting quiz:', error);
+    }
+});
+
+// Function to calculate the quiz score
+function calculateScore(answers) {
+    // Define correct answers for the quiz
+    const correctAnswers = {
+        q1: '2,0',
+        q2: '4,3',
+        q3: 'Both',
+        q4: 'True',
+        q5: '3,2',
+        q6: '3,2',
+        q7: 'False',
+        q8: 'Multiplying by a constant',
+        q9: 'There are no solutions.',
+        q10: 'False'
+    };
+
+    // Calculate the score based on correct answers
+    let score = 0;
+    Object.keys(correctAnswers).forEach(key => {
+        if (answers[key]?.toLowerCase() === correctAnswers[key].toLowerCase()) {
+            score++;
+        }
+    });
+    return score;
+}
+</script>
+{% endblock %}

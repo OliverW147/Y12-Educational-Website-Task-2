@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="hero-section" style="background-image: url('{{ url_for('static', filename='img/hearo.jpg') }}');">
+    <div class="hero-content text-center">
+        <h1>Welcome to ThinkLeap</h1>
+        <p>Strengthen your maths and physics skills.</p>
+        <a href="{{ url_for('register') }}" class="btn btn-primary">Get Started</a>
+    </div>
+</div>
+
+<section class="features-section py-5">
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card-custom">
+                    <h4>Interactive Quizzes</h4>
+                    <p>Challenge your knowledge.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card-custom">
+                    <h4>Resources</h4>
+                    <p>Access engaging materials.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card-custom">
+                    <h4>Track Your Progress</h4>
+                    <p>Stay on top of your learning.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

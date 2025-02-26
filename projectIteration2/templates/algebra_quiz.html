@@ -1,0 +1,164 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Algebra Quiz</h2>
+<p>Test your understanding of algebra with this quiz. Answer the questions below and submit to see your score.</p>
+
+<form id="algebraQuizForm">
+    <!-- Question 1 -->
+    <h4>1. Solve the equation: 2x + 5 = 15</h4>
+    <div class="form-check">
+        <input type="radio" id="q1a" name="q1" value="5" class="form-check-input">
+        <label for="q1a" class="form-check-label">x = 5</label>
+    </div>
+    <div class="form-check">
+        <input type="radio" id="q1b" name="q1" value="4" class="form-check-input">
+        <label for="q1b" class="form-check-label">x = 4</label>
+    </div>
+    <div class="form-check">
+        <input type="radio" id="q1c" name="q1" value="2" class="form-check-input">
+        <label for="q1c" class="form-check-label">x = 2</label>
+    </div>
+
+    <!-- Question 2 -->
+    <h4>2. What is the value of x in the equation 3x - 7 = 11?</h4>
+    <input type="number" id="q2" placeholder="Enter your answer" class="form-control mb-3">
+
+    <!-- Question 3 -->
+    <h4>3. True or False: The solution to x² = 16 is x = 4 or x = -4.</h4>
+    <div class="form-check">
+        <input type="radio" id="q3a" name="q3" value="True" class="form-check-input">
+        <label for="q3a" class="form-check-label">True</label>
+    </div>
+    <div class="form-check">
+        <input type="radio" id="q3b" name="q3" value="False" class="form-check-input">
+        <label for="q3b" class="form-check-label">False</label>
+    </div>
+
+    <!-- Question 4 -->
+    <h4>4. Solve for x: 4x - 8 = 12.</h4>
+    <input type="number" id="q4" placeholder="Enter your answer" class="form-control mb-3">
+
+    <!-- Question 5 -->
+    <h4>5. Factorize the expression: x² - 9.</h4>
+    <div class="form-check">
+        <input type="radio" id="q5a" name="q5" value="(x + 3)(x - 3)" class="form-check-input">
+        <label for="q5a" class="form-check-label">(x + 3)(x - 3)</label>
+    </div>
+    <div class="form-check">
+        <input type="radio" id="q5b" name="q5" value="(x - 3)(x - 3)" class="form-check-input">
+        <label for="q5b" class="form-check-label">(x - 3)(x - 3)</label>
+    </div>
+    <div class="form-check">
+        <input type="radio" id="q5c" name="q5" value="(x + 9)(x - 1)" class="form-check-input">
+        <label for="q5c" class="form-check-label">(x + 9)(x - 1)</label>
+    </div>
+
+    <!-- Question 6 -->
+    <h4>6. Simplify the expression: 5x - 3 + 2x + 7.</h4>
+    <input type="text" id="q6" placeholder="Enter your answer" class="form-control mb-3">
+
+    <!-- Question 7 -->
+    <h4>7. True or False: The expression (x + 2)² expands to x² + 4x + 4.</h4>
+    <div class="form-check">
+        <input type="radio" id="q7a" name="q7" value="True" class="form-check-input">
+        <label for="q7a" class="form-check-label">True</label>
+    </div>
+    <div class="form-check">
+        <input type="radio" id="q7b" name="q7" value="False" class="form-check-input">
+        <label for="q7b" class="form-check-label">False</label>
+    </div>
+
+    <!-- Question 8 -->
+    <h4>8. If f(x) = 2x + 3, what is f(4)?</h4>
+    <div class="form-check">
+        <input type="radio" id="q8a" name="q8" value="11" class="form-check-input">
+        <label for="q8a" class="form-check-label">11</label>
+    </div>
+    <div class="form-check">
+        <input type="radio" id="q8b" name="q8" value="9" class="form-check-input">
+        <label for="q8b" class="form-check-label">9</label>
+    </div>
+    <div class="form-check">
+        <input type="radio" id="q8c" name="q8" value="10" class="form-check-input">
+        <label for="q8c" class="form-check-label">10</label>
+    </div>
+
+    <!-- Question 9 -->
+    <h4>9. Solve the inequality: 5x - 3 > 2.</h4>
+    <input type="text" id="q9" placeholder="Enter your answer in terms of x (e.g., x > 1)" class="form-control mb-3">
+
+    <!-- Question 10 -->
+    <h4>10. True or False: The expression 3(x - 4) + 2x simplifies to 5x - 12.</h4>
+    <div class="form-check">
+        <input type="radio" id="q10a" name="q10" value="True" class="form-check-input">
+        <label for="q10a" class="form-check-label">True</label>
+    </div>
+    <div class="form-check">
+        <input type="radio" id="q10b" name="q10" value="False" class="form-check-input">
+        <label for="q10b" class="form-check-label">False</label>
+    </div>
+
+    <!-- Submit Button -->
+    <button type="button" class="btn btn-primary mt-3" onclick="submitAlgebraQuiz()">Submit Quiz</button>
+</form>
+
+<div id="quizResults" style="display:none;">
+    <h3>Quiz Results</h3>
+    <p id="scoreDisplay"></p>
+    <a href="{{ url_for('dashboard') }}" class="btn btn-secondary">Back to Dashboard</a>
+</div>
+
+<script>
+function submitAlgebraQuiz() {
+    // Retrieve user answers
+    const answers = {
+        q1: document.querySelector('input[name="q1"]:checked')?.value,
+        q2: document.getElementById('q2').value,
+        q3: document.querySelector('input[name="q3"]:checked')?.value,
+        q4: document.getElementById('q4').value,
+        q5: document.querySelector('input[name="q5"]:checked')?.value,
+        q6: document.getElementById('q6').value.trim(),
+        q7: document.querySelector('input[name="q7"]:checked')?.value,
+        q8: document.querySelector('input[name="q8"]:checked')?.value,
+        q9: document.getElementById('q9').value.trim(),
+        q10: document.querySelector('input[name="q10"]:checked')?.value,
+    };
+
+    // Correct answers
+    const correctAnswers = {
+        q1: '5',
+        q2: '6',
+        q3: 'True',
+        q4: '5',
+        q5: '(x + 3)(x - 3)',
+        q6: '7x + 4',
+        q7: 'True',
+        q8: '11',
+        q9: 'x > 1',
+        q10: 'True',
+    };
+
+    // Calculate score
+    let score = 0;
+    Object.keys(correctAnswers).forEach(key => {
+        if (answers[key]?.toLowerCase() === correctAnswers[key].toLowerCase()) {
+            score++;
+        }
+    });
+
+    // Display results
+    document.getElementById('scoreDisplay').innerText = `Your score is ${score}/10.`;
+    document.getElementById('quizResults').style.display = 'block';
+
+    // Save score to server
+    fetch('{{ url_for("submit_algebra_quiz") }}', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ score: score, quiz_id: 1 })
+    })
+    .then(response => response.json())
+    .then(data => console.log('Score saved:', data))
+    .catch(error => console.error('Error:', error));
+}
+</script>
+{% endblock %}

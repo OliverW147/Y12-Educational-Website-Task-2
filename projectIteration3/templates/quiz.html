@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+<style>
+    ul li a {
+        color: white;
+        text-decoration: none;
+    }
+    ul li a:visited {
+        color: white;
+    }
+    ul li a:hover {
+        color: #ddd;
+    }
+</style>
+
+<h2>Available Quizzes</h2>
+<ul>
+    <li><a href="{{ url_for('algebra_quiz') }}">Algebra Quiz</a></li>
+    <li><a href="{{ url_for('newtons_laws_quiz') }}">Newton's Laws Quiz</a></li>
+    <li><a href="{{ url_for('simultaneous_equations_quiz') }}">Simultaneous Equations Quiz</a></li>
+</ul>
+<!-- Back button -->
+<div class="container text-center mt-5">
+    <div class="row">
+        <div class="col-12">
+            <p>&nbsp;</p> </div>
+            <a href="{{ url_for('dashboard') }}" class="btn btn-primary" style="margin-top: 50px !important;">Back to Dashboard</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

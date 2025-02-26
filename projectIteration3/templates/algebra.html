@@ -1,0 +1,240 @@
+{% extends "base.html" %}
+{% block content %}
+<style>
+    /* Better button */
+    .btn-modern {
+        background: linear-gradient(135deg, #0061f2, #00a2ff); /* gradient */
+        color: white; /* Text color */
+        border: none; /* Remove border */
+        padding: 6px 20px; /* padding */
+        border-radius: 25px; /* Round corners */
+        font-size: 14px;
+        cursor: pointer;
+        transition: background 0.3s, transform 0.2s;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        outline: none;
+    }
+
+    /* Hover effect */
+    .btn-modern:hover {
+        background: linear-gradient(135deg, #0051c8, #008add);
+        transform: translateY(-2px);
+    }
+
+    /* Active (pressed) effect */
+    .btn-modern:active {
+        transform: translateY(1px); /* Slight push-down effect */
+    }
+
+    /* Hint button styling */
+    .hint-button {
+        background: linear-gradient(135deg, #0061f2, #00a2ff);
+        color: white;
+        border: none;
+        padding: 6px 16px;
+        border-radius: 25px;
+        font-size: 14px;
+        cursor: pointer;
+        transition: background 0.3s, transform 0.2s;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        outline: none;
+    }
+
+    /* Hover effect */
+    .hint-button:hover {
+        background: linear-gradient(135deg, #0051c8, #008add);
+        transform: translateY(-2px);
+    }
+
+    /* Active (pressed) effect */
+    .hint-button:active {
+        transform: translateY(1px);
+    }
+</style>
+<div class="container">
+    <h2>Maths - Algebra</h2>
+    <p>Algebra is a branch of mathematics that deals with symbols and the rules for manipulating those symbols. These symbols (often represented by letters) stand in for numbers in equations and expressions, allowing us to generalize and solve problems.</p>
+
+    <h3>Key Concepts in Algebra</h3>
+    <p>Below are some foundational concepts in algebra, with explanations, examples, and interactive questions:</p>
+
+    <h4>1. Variables and Expressions</h4>
+    <div class="concept-section">
+        <p>A variable is a symbol, usually a letter, used to represent an unknown or changing value. For example, in the expression <code>2x + 3</code>, <code>x</code> is a variable.</p>
+        <div class="example">
+            <p><strong>Example:</strong></p>
+            <p>If <code>x = 5</code>, then <code>2x + 3</code> becomes <code>2(5) + 3 = 10 + 3 = 13</code>.</p>
+        </div>
+        <div class="question">
+            <p><strong>Question:</strong> What is the value of <code>2x + 3</code> when <code>x = 10</code>? Enter your answer below:</p>
+            <input type="number" id="userAnswer1" placeholder="Your answer">
+            <button class="btn-modern" onclick="checkAnswer('23', 'userAnswer1', 'result1')">Check Answer</button>
+            <button class="hint-button" onclick="toggleHint('hint1')">Hint</button>
+            <div id="hint1" class="hint" style="display:none;">Multiply 2 by 10 and then add 3.</div>
+            <div id="result1" class="result"></div>
+        </div>
+    </div>
+
+    <h4>2. Linear Equations</h4>
+    <div class="concept-section">
+        <p>A linear equation is an equation where the highest exponent of the variable is 1. These equations often look like <code>ax + b = c</code>.</p>
+        <div class="example">
+            <p><strong>Example:</strong> Solve <code>2x + 3 = 11</code>.</p>
+            <p><strong>Solution:</strong></p>
+            <ul>
+                <li>Subtract 3 from both sides: <code>2x = 8</code></li>
+                <li>Divide both sides by 2: <code>x = 4</code></li>
+            </ul>
+        </div>
+        <div class="question">
+            <p><strong>Question:</strong> If <code>2x + 3 = 11</code>, what is the value of <code>x</code>? Enter your answer below:</p>
+            <input type="number" id="userAnswer2" placeholder="Your answer">
+            <button class="btn-modern" onclick="checkAnswer('4', 'userAnswer2', 'result2')">Check Answer</button>
+            <button class="hint-button" onclick="toggleHint('hint2')">Hint</button>
+            <div id="hint2" class="hint" style="display:none;">Try isolating x by subtracting and dividing.</div>
+            <div id="result2" class="result"></div>
+        </div>
+    </div>
+
+    <h4>3. Quadratic Equations</h4>
+    <div class="concept-section">
+        <p>A quadratic equation is an equation where the highest exponent of the variable is 2. The standard form is <code>ax² + bx + c = 0</code>.</p>
+        <div class="example">
+            <p><strong>Example:</strong> Solve <code>x² - 5x + 6 = 0</code> using factorization.</p>
+            <p><strong>Solution:</strong></p>
+            <ul>
+                <li>Factor the quadratic: <code>(x - 2)(x - 3) = 0</code></li>
+                <li>Set each factor to zero: <code>x - 2 = 0</code> or <code>x - 3 = 0</code></li>
+                <li>So, <code>x = 2</code> or <code>x = 3</code></li>
+            </ul>
+        </div>
+        <div class="question">
+            <p><strong>Question:</strong> What are the roots of the equation <code>x² - 5x + 6 = 0</code>? Enter the smallest root below:</p>
+            <input type="number" id="userAnswer3" placeholder="Your answer">
+            <button class="btn-modern" onclick="checkAnswer('-3', 'userAnswer3', 'result3')">Check Answer</button>
+            <button class="hint-button" onclick="toggleHint('hint3')">Hint</button>
+            <div id="hint3" class="hint" style="display:none;">Think about what two numbers multiply to 6 and add to -5.</div>
+            <div id="result3" class="result"></div>
+        </div>
+    </div>
+
+    <h4>4. Polynomials</h4>
+    <div class="concept-section">
+        <p>A polynomial is a mathematical expression involving a sum of powers in one or more variables multiplied by coefficients. For example, <code>3x² + 2x - 1</code> is a polynomial.</p>
+        <div class="example">
+            <p><strong>Example:</strong> Add <code>3x² + 4x + 5</code> and <code>2x² - 3x + 1</code>.</p>
+            <p><strong>Solution:</strong></p>
+            <ul>
+                <li>Add the like terms: <code>(3x² + 2x²) + (4x - 3x) + (5 + 1) = 5x² + x + 6</code></li>
+            </ul>
+        </div>
+        <div class="question">
+            <p><strong>Question:</strong> What is the sum of <code>3x² + 4x + 5</code> and <code>2x² - 3x + 1</code>? Enter your answer below:</p>
+            <input type="text" id="userAnswer4" placeholder="Your answer">
+            <button class="btn-modern" onclick="checkPolynomialAnswer('5x^2 + x + 6', 'userAnswer4', 'result4')">Check Answer</button>
+            <button class="hint-button" onclick="toggleHint('hint4')">Hint</button>
+            <div id="hint4" class="hint" style="display:none;">Combine like terms: add the coefficients of the same powers.</div>
+            <div id="result4" class="result"></div>
+        </div>
+    </div>
+
+    <h4>5. Solving Word Problems</h4>
+    <div class="concept-section">
+        <p>Word problems in algebra involve translating real-world situations into mathematical equations that can be solved.</p>
+        <div class="example">
+            <p><strong>Example:</strong> A number increased by 7 is equal to 12. What is the number?</p>
+            <p><strong>Solution:</strong></p>
+            <ul>
+                <li>Let the number be <code>x</code>. The equation becomes <code>x + 7 = 12</code>.</li>
+                <li>Solve for <code>x</code>: <code>x = 12 - 7 = 5</code>.</li>
+            </ul>
+        </div>
+        <div class="question">
+            <p><strong>Question:</strong> What number plus 7 equals 12? Enter your answer below:</p>
+            <input type="number" id="userAnswer5" placeholder="Your answer">
+            <button class="btn-modern" onclick="checkAnswer('5', 'userAnswer5', 'result5')">Check Answer</button>
+            <button class="hint-button" onclick="toggleHint('hint5')">Hint</button>
+            <div id="hint5" class="hint" style="display:none;">Subtract 7 from 12.</div>
+            <div id="result5" class="result"></div>
+        </div>
+    </div>
+
+    <h3>Practice Problems</h3>
+    <p>Try solving these additional problems to test your understanding:</p>
+    <ul class="practice-list">
+        <li>Simplify <code>4x - 3 + 2x + 1</code>. <button class="btn-modern" onclick="showSolution('6x - 2')">Show Solution</button></li>
+        <li>Solve <code>5x - 10 = 0</code>. <button class="btn-modern" onclick="showSolution('x = 2')">Show Solution</button></li>
+        <li>Factorize <code>x² + 7x + 10</code>. <button class="btn-modern" onclick="showSolution('(x + 2)(x + 5)')">Show Solution</button></li>
+    </ul>
+</div>
+
+<script>
+    function checkAnswer(correctAnswer, inputId, resultId) {
+        const userAnswer = document.getElementById(inputId).value.trim();
+        const resultElement = document.getElementById(resultId);
+        if (userAnswer === correctAnswer) {
+            resultElement.innerHTML = "<span class='correct'>Correct!</span>";
+            resultElement.classList.add('success');
+            resultElement.classList.remove('error');
+        } else {
+            resultElement.innerHTML = "<span class='incorrect'>Incorrect. Try again!</span>";
+            resultElement.classList.add('error');
+            resultElement.classList.remove('success');
+        }
+    }
+
+    function checkPolynomialAnswer(correctAnswer, inputId, resultId) {
+        const userAnswer = document.getElementById(inputId).value.trim().replace(/\s+/g, '');
+        const resultElement = document.getElementById(resultId);
+        if (userAnswer === correctAnswer.replace(/\s+/g, '')) {
+            resultElement.innerHTML = "<span class='correct'>Correct!</span>";
+            resultElement.classList.add('success');
+            resultElement.classList.remove('error');
+        } else {
+            resultElement.innerHTML = "<span class='incorrect'>Incorrect. Try again!</span>";
+            resultElement.classList.add('error');
+            resultElement.classList.remove('success');
+        }
+    }
+
+    function toggleHint(hintId) {
+        const hint = document.getElementById(hintId);
+        if (hint.style.display === 'none') {
+            hint.style.display = 'block';
+        } else {
+            hint.style.display = 'none';
+        }
+    }
+
+    function showSolution(solution) {
+        alert(`Solution: ${solution}`);
+    }
+</script>
+
+<style>
+
+    .question {
+        margin-top: 10px;
+    }
+
+    .result {
+        margin-top: 5px;
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+    .correct {
+        color: limegreen;
+        font-weight: bold;
+    }
+
+    .incorrect {
+        color: red;
+        font-weight: bold;
+    }
+
+    .practice-list li {
+        margin: 8px 0;
+    }
+</style>
+{% endblock %}
